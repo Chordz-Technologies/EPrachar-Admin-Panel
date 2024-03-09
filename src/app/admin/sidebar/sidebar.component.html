@@ -1,0 +1,51 @@
+<div class="navbar">
+  <div class="user ps-5">
+    <img
+      src="../../../assets/Images/E-प्रचार 2.png"
+      alt="E-प्रचार"
+      height="150px"
+      width="150px"
+    />
+    <p class="name">Admin</p>
+    <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
+  </div>
+  <div class="menu">
+    <div class="menu-head text-center">
+      <span>Dashboard</span>
+    </div>
+    <div class="menu-item">
+      <!-- <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['dashboard']">
+                <mat-icon>dashboard</mat-icon>
+                <span>Home</span>
+            </button> -->
+
+      <button
+        *ngIf="isLoggedIn && isAdmin"
+        mat-button
+        class="menu-button"
+        [routerLinkActive]="['active']"
+        [routerLink]="['/user']"
+      >
+        <mat-icon>people</mat-icon>
+        <span>Admins</span>
+      </button>
+      <!-- <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/subscription']">
+                <mat-icon>currency_rupee</mat-icon>
+                <span>Subscription</span>
+            </button>
+            <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/changePassword']">
+                <mat-icon>lock_reset</mat-icon>
+                <span>Change Password</span>
+            </button>
+            <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/appConfig']">
+                <mat-icon>settings</mat-icon>
+                <span>App Config</span>
+            </button> -->
+      <button mat-button class="menu-button" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+              
+      </button>
+    </div>
+  </div>
+</div>

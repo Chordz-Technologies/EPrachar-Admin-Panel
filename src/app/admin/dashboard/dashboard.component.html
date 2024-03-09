@@ -1,0 +1,57 @@
+<mat-card style="margin-bottom: 10px">
+  <mat-card-title
+    ><i class="fa-solid fa-users"></i>
+    <b>ADMIN</b>
+  </mat-card-title>
+</mat-card>
+
+<div class="main-div">
+  <div *ngIf="dataLoaded" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="said">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.a_id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="saname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Admin Name</b>
+        </th>
+        <td mat-cell *matCellDef="let row">{{ row.a_name }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="samessage">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Text Message</b>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.a_message }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <b>Action</b>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <button (click)="edit(row.a_id)">
+            <mat-icon color="primary">edit</mat-icon></button
+          >&nbsp;&nbsp;
+          <!-- <button (click)="showUsers(row.businessid)">
+            <mat-icon color="primary">people</mat-icon>
+          </button> -->
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <!-- <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4" style="padding: 10px">
+          No data matching "{{ input.value }}"
+        </td>
+      </tr> -->
+    </table>
+  </div>
+</div>

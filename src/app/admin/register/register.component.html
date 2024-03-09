@@ -1,0 +1,53 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="space-around center"
+>
+  <mat-card>
+    <mat-card-title>
+      <h2>Sign-Up for Admin Pannel</h2>
+    </mat-card-title>
+    <mat-card-content>
+      <form
+        class="example-form"
+        [formGroup]="registerForm"
+        (ngSubmit)="registration()"
+      >
+        <mat-form-field class="example-full-width">
+          <mat-label>User ID</mat-label>
+          <input matInput placeholder="xyz@123" formControlName="id" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Ex. Pizza" formControlName="adminname" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="********" formControlName="adminpassword" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Ex. xyz123@gmail.com"
+            formControlName="email"
+          />
+        </mat-form-field>
+        <div
+          fxLayout="row wrap"
+          fxLayout.xs="column"
+          fxLayoutAlign="space-around center"
+          fxLayoutGap="25px"
+        >
+          <button type="submit" mat-raised-button color="primary">
+            Submit
+          </button>
+          <a routerLink="/login" mat-raised-button color="accent"
+            >Back to login</a
+          >
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

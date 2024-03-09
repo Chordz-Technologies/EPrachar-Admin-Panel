@@ -1,0 +1,271 @@
+{
+  "adminData": {
+    "id": "01",
+    "adminname": "admin",
+    "adminpassword": "admin123",
+    "email": "ad12@gmail.com"
+  },
+  "homeData": {
+    "totalUsers": 98,
+    "activeUsers": 12,
+    "trialUsers": 86,
+    "currentWeekRecords": {
+      "monday": 11,
+      "tuesday": 1,
+      "wednesday": 7,
+      "thursday": 6,
+      "friday": 4,
+      "saturday": 9,
+      "sunday": 2
+    },
+    "pastWeekRecords": {
+      "monday": 9,
+      "tuesday": 10, 
+      "wednesday": 4,
+      "thursday": 9,
+      "friday": 3,
+      "saturday": 1,
+      "sunday": 11
+    }
+  },
+  "farmersData": [
+    {
+      "userid": 100000201,
+      "userpassword": "6i8OZLdnNcAnpAybXqvgzJzzP3MIGJkcQuCWqngH/AM=",
+      "username": "राजेश स. पाटील ",
+      "mobileno": "9421013332",
+      "androidid": "7b1627de9a1a0734",
+      "deviceinfo": "Xiaomi Redmi Note 8 Pro",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100000801,
+      "userpassword": "jCSiPi8s3i/nhCBXn5nEOexJ2JPJUO4rOyi9hZ43rP4=",
+      "username": "New popular box factory",
+      "mobileno": "1644350661",
+      "androidid": "b8a19cd9e1b9efcb",
+      "deviceinfo": "HUAWEI ANE-LX1",
+      "status": "Trial",
+      "subscriptionEndDate": null
+    },
+    {
+      "userid": 100000901,
+      "userpassword": "nE6tLxqgzlvpX6RoXGL00fEURWDYRzJlbHwQ/iX+kEw=",
+      "username": "U.A.K  Box packaging ",
+      "mobileno": "9399639215",
+      "androidid": "0e986eb7cf01d332",
+      "deviceinfo": "Vivo 1818",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001001,
+      "userpassword": "CIaTRInwpHB7QkNWbtaccWWVlg6jMUKOOX7wL6F+6Pc=",
+      "username": "box",
+      "mobileno": "9079835334",
+      "androidid": "8f4a0026ad7d3c5e",
+      "deviceinfo": "OnePlus GM1901",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001101,
+      "userpassword": "HsaFVIUDvptCbRS3jhmaPIa9w/VL+1n2kYi7eK54EDg=",
+      "username": "Sukh Santosh Packs",
+      "mobileno": "9595185111",
+      "androidid": "b157672a8f9898e4",
+      "deviceinfo": "OPPO CPH1969",
+      "status": "Trial",
+      "subscriptionEndDate": null
+    },
+    {
+      "userid": 100001201,
+      "userpassword": "Js88Aj3jgy9rg9FURHSeCHV8xQ6edE4Lc0iHPd5JT9k=",
+      "username": "VSquare Packaging",
+      "mobileno": "7875304455",
+      "androidid": "637782caa603c6b5",
+      "deviceinfo": "Xiaomi Redmi Note 4",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001301,
+      "userpassword": "pYjzO7I6o+Yg6rebzz6kRP8gRkmoPBMI51KOgY/28aw=",
+      "username": "BHAGWATI PACKAGING",
+      "mobileno": "7778970049",
+      "androidid": "b96a6141cf008f83",
+      "deviceinfo": "OPPO CPH1937",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001401,
+      "userpassword": "iWL1+CH6vd+C/5sBNshgzocW0RUlmKsrdRbOsTSPf0o=",
+      "username": "Delta packaging solutions ",
+      "mobileno": "9148218445",
+      "androidid": "ad1b7f9fa4193a40",
+      "deviceinfo": "Samsung SM-A515F",
+      "status": "Trial",
+      "subscriptionEndDate": null
+    },
+    {
+      "userid": 100001501,
+      "userpassword": "pc5u3aS1Bf8CVNKtPBi6duMGGxEbi1KdqZ07Jlr9Vfg=",
+      "username": "Printshop",
+      "mobileno": "9872628972",
+      "androidid": "f8a7391065523f82",
+      "deviceinfo": "Xiaomi Redmi Note 5 Pro",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001601,
+      "userpassword": "vsHvkAPur6517a4T1O9XNnksQjtkB8oPwVGV19iuaPM=",
+      "username": "Sai packaging",
+      "mobileno": "9421239596",
+      "androidid": "9f56fb262ccc8ca7",
+      "deviceinfo": "Vivo 1933",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001701,
+      "userpassword": "AqNDEG6FmHtrcj0zyW0XfTlXra9LVytFknUVffKsMhg=",
+      "username": "krishna enterprises",
+      "mobileno": "6397507062",
+      "androidid": "59470f85b84aea9b",
+      "deviceinfo": "Xiaomi Redmi Note 5 Pro",
+      "status": "Trial",
+      "subscriptionEndDate": null
+    },
+    {
+      "userid": 100001801,
+      "userpassword": "wD9M9TISvxQm9KDOz6830e4jmH61uDbjQQXISRrAQtg=",
+      "username": "MAA SYAMALAI INDUSTRIES",
+      "mobileno": "9658816446",
+      "androidid": "fcedc6e5081dd11d",
+      "deviceinfo": "OPPO CPH1823",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100001901,
+      "userpassword": "Z0TN54/n9AotWKk35wyVWmVoqYsjimQ20TWAyp8vIVU=",
+      "username": "Tushant packging ",
+      "mobileno": "7972820675",
+      "androidid": "86f83f397033f64f",
+
+      "deviceinfo": "Samsung SM-A515F",
+      "status": "Active",
+      "subscriptionEndDate": "2024-01-15"
+    },
+    {
+      "userid": 100002001,
+      "userpassword": "JwkBEhlzJwGidcTVEFuT4O95SjjpFuF3zzFHYiHJcY0=",
+      "username": "Shree Krishna Packaging",
+      "mobileno": "8802991252",
+      "androidid": "8fb6425cbf380846",
+      "deviceinfo": "Asus ASUS_X01BDA",
+      "status": "Trial",
+      "subscriptionEndDate": null
+    }
+  ],
+  "configData": [
+    {
+      "configid": 1,
+      "configname": "app.android.name",
+      "configvalue": "in.dishaswarajsoft.dsbox"
+    },
+    {
+      "configid": 2,
+      "configname": "app.burstingfactor",
+      "configvalue": "14"
+    },
+    {
+      "configid": 3,
+      "configname": "app.conversionrate",
+      "configvalue": "10"
+    },
+    {
+      "configid": 4,
+      "configname": "app.flutefactor",
+      "configvalue": "1.5"
+    },
+    {
+      "configid": 5,
+      "configname": "app.gsm",
+      "configvalue": "150"
+    },
+    {
+      "configid": 6,
+      "configname": "app.help",
+      "configvalue": "0"
+    },
+    {
+      "configid": 7,
+      "configname": "app.help.customercare",
+      "configvalue": "9421013332"
+    },
+    {
+      "configid": 8,
+      "configname": "app.help.weblink",
+      "configvalue": "dsbox.dishaswaraj.in/help.aspx"
+    },
+    {
+      "configid": 9,
+      "configname": "app.help.youtubechannelid",
+      "configvalue": "https://www.youtube.com/channel/UCwK98E8DpWc1Feo5Tt9LmKw"
+    },
+    {
+      "configid": 10,
+      "configname": "app.marginlength",
+      "configvalue": "50"
+    },
+    {
+      "configid": 11,
+      "configname": "app.marginwidth",
+      "configvalue": "20"
+    },
+    {
+      "configid": 12,
+      "configname": "app.name",
+      "configvalue": "DS Box"
+    },
+    {
+      "configid": 13,
+      "configname": "app.payment.accountname",
+      "configvalue": "Disha Swarajsoft"
+    },
+    {
+      "configid": 14,
+      "configname": "app.payment.accountno",
+      "configvalue": "29882000000080"
+    },
+    {
+      "configid": 15,
+      "configname": "app.payment.bankifsc",
+      "configvalue": "HDFC0002988"
+    },
+    {
+      "configid": 16,
+      "configname": "app.payment.bankname",
+      "configvalue": "HDFC Bank"
+    },
+    {
+      "configid": 17,
+      "configname": "app.payment.branch",
+      "configvalue": "Uruli Kanchan, Pune"
+    },
+    {
+      "configid": 18,
+      "configname": "app.payment.qrcode",
+      "configvalue": "QR Code Image Uploaded"
+    },
+    {
+      "configid": 19,
+      "configname": "app.profit",
+      "configvalue": "15"
+    }
+  ]
+}

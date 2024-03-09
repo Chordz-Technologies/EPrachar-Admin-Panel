@@ -1,0 +1,90 @@
+<div class="main-div" style="padding-top: 20px">
+  <div class="py-2">
+    <div class="card px-5 py-3">
+      <mat-card-title>
+        <h2 class="py-2 border-bottom">
+          <i class="fa-solid fa-user"></i> Message Details
+        </h2>
+      </mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="AdminForm">
+          <div class="row mb-3">
+            <label for="id" class="col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                id="id"
+                class="form-control"
+                formControlName="id"
+                placeholder="User Name"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="contactno" class="col-sm-2 col-form-label"
+              >Message</label
+            >
+            <div class="col-sm-10">
+              <textarea
+                type="text"
+                class="form-control"
+                formControlName="smessage"
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <div
+              class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)"
+            >
+              Message is required.
+            </div>
+
+            <div
+              class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)"
+            >
+              Message is length is too large please Enter under 150 characters.
+            </div>
+          </div>
+
+          <br />
+
+          <div fxLayoutGap="40px">
+            <br />
+            <button
+              type="submit"
+              class="btn btn-primary me-3"
+              *ngIf="showupdate"
+              (click)="updateAdmin()"
+            >
+              Update
+            </button>
+            <button
+              type="submit"
+              class="btn btn-primary me-3"
+              *ngIf="showsubmit"
+              (click)="postSuperAdminDetails()"
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              routerLink="/dashboard"
+            >
+              Close
+            </button>
+            <!-- <button
+              type="button"
+              class="btn btn-danger me-3"
+              *ngIf="showdelete"
+              (click)="deleteAdmin()"
+            >
+              Delete
+            </button> -->
+          </div>
+        </form>
+      </mat-card-content>
+    </div>
+  </div>
+</div>
