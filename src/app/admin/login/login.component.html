@@ -5,22 +5,32 @@
 >
   <mat-card>
     <mat-card-title>
-      <h2>Sign-In for Admin Pannel</h2>
+      <div class="user ps-5">
+        <img
+          src="../../../assets/Images/E-prachar2.png"
+          alt="E-प्रचार"
+          height="250px"
+          width="250px"
+        />
+
+        <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
+      </div>
     </mat-card-title>
     <mat-card-content>
+      <h2>Login Info</h2>
       <form class="example-form" [formGroup]="loginform">
         <mat-form-field class="example-full-width">
-          <mat-label>Name</mat-label>
+          <mat-label>Admin Name</mat-label>
           <input
             matInput
-            placeholder="Ex. xyz"
+            placeholder="Ex. Digvijay Singh"
             id="adminname"
             formControlName="adminname"
             required
           />
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
+          <mat-label>Admin Password</mat-label>
           <input
             matInput
             placeholder="********"

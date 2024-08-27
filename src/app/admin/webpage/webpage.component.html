@@ -1,0 +1,24 @@
+<section class="py-3 py-md-5">
+  <div class="container mb-4 mb-md-5">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-xxl-8 text-center">
+        <img class="img-fluid rounded shadow" loading="lazy" [src]="adminDetails?.a_image" [alt]="adminDetails?.a_name"
+          style="width: 500px" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container overflow-hidden">
+    <div class="row gy-2 gy-md-0 justify-content-center">
+      <div class="col-12 order-md-1 col-md-8 col-xxl-6">
+        <div class="text-center text-md-start">
+          <h2 class="display-3 fw-bold lh-1">{{ adminDetails?.a_name }}</h2>
+
+          <hr class="w-25 mx-auto ms-md-0 mb-4 text-secondary" />
+          <p>{{ adminDetails?.a_message }}</p>
+          <p>{{ adminDetails?.a_contactno }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

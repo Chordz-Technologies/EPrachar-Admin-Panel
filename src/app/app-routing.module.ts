@@ -9,6 +9,7 @@ import { EditsuperMsgComponent } from './admin/Editforms/editsuper-msg/editsuper
 import { EditadminMsgComponent } from './admin/Editforms/editadmin-msg/editadmin-msg.component';
 import { AddNewadminComponent } from './admin/Editforms/add-newadmin/add-newadmin.component';
 import { AuthGuard } from './guard/auth.guard';
+import { WebpageComponent } from './admin/webpage/webpage.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
     component: HomeComponent, canActivate: [AuthGuard],
     children: [
       // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'user', component: SuperAdminComponent },
+      { path: 'admin', component: SuperAdminComponent },
       { path: 'edit_superadmin_text/:id', component: EditsuperMsgComponent },
       { path: 'edit_admin_text/:id', component: EditadminMsgComponent },
       { path: 'add_new_admin', component: AddNewadminComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
     ]
   },
   { path: 'login', component: LoginComponent },
-  // { path: 'home', component: HomeComponent },
+  { path: 'webpage/:id', component: WebpageComponent },
   { path: 'register', component: RegisterComponent }
 ];
 

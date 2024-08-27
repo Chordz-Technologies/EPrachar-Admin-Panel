@@ -31,6 +31,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { EditsuperMsgComponent } from './admin/Editforms/editsuper-msg/editsuper-msg.component';
 import { EditadminMsgComponent } from './admin/Editforms/editadmin-msg/editadmin-msg.component';
 import { AddNewadminComponent } from './admin/Editforms/add-newadmin/add-newadmin.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { WebpageComponent } from './admin/webpage/webpage.component';
+
 
 
 
@@ -47,7 +50,8 @@ import { AddNewadminComponent } from './admin/Editforms/add-newadmin/add-newadmi
     SuperAdminComponent,
     EditsuperMsgComponent,
     EditadminMsgComponent,
-    AddNewadminComponent
+    AddNewadminComponent,
+    WebpageComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,7 @@ import { AddNewadminComponent } from './admin/Editforms/add-newadmin/add-newadmi
     ToastrModule.forRoot(),
 
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ElectionAdmin_model } from 'src/app/models';
 import { ServiceService } from 'src/app/shared/service.service';
+import { ImageCompressionService } from 'src/app/shared/service/image-compression.service';
 
 @Component({
   selector: 'app-editsuper-msg',
@@ -17,10 +19,11 @@ export class EditsuperMsgComponent implements OnInit {
   showsubmit!: boolean;
   showupdate!: boolean;
   showdelete!: boolean;
-  superAdminimageData: File | null | undefined;
+  adminImageData: File | null | undefined;
 
 
-  constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+
+  constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private toastr: ToastrService, private imageCompressionService: ImageCompressionService) { }
 
   ngOnInit(): void {
     this.superAdminForm = this.fb.group({
@@ -54,6 +57,7 @@ export class EditsuperMsgComponent implements OnInit {
     this.showdelete = false;
   }
 
+
   onedit(superAdmin: ElectionAdmin_model) {
     this.showsubmit = false;
     this.showupdate = true;
@@ -62,10 +66,49 @@ export class EditsuperMsgComponent implements OnInit {
       id: superAdmin.a_id,
       // supername: superAdmin.a_name,
       smessage: superAdmin.a_message,
-      // superAdminImage: superAdmin.saimage
+      // superAdminImage: superAdmin.a_image
     })
 
 
+  }
+
+
+  // for image upload
+  onImageSelected(product: any) {
+
+    const fileList: FileList = product.target.files;
+    if (fileList.length > 0) {
+      this.adminImageData = fileList[0];
+      console.log('Selected image:', this.adminImageData);
+    } else {
+      this.adminImageData = null; // Reset file if no file is selected
+    }
+
+  }
+
+  // onImageSelected(product: any) {
+  //   const fileList: FileList = product.target.files;
+  //   if (fileList.length > 0) {
+  //     const imageFile: File = fileList[0];
+  //     if (imageFile.size > 2 * 1024 * 1024) {
+  //       // Image size is greater than 2MB, compress it
+  //       this.imageCompressionService.compressImage(imageFile).then(compressedFile => {
+  //         // Now you have the compressed file, assign it to adminImageData
+  //         this.adminImageData = compressedFile;
+  //       }).catch(error => {
+  //         console.error('Error compressing image:', error);
+  //       });
+  //     } else {
+  //       // Image size is within limit, assign it directly
+  //       this.adminImageData = imageFile;
+  //     }
+  //   }
+  // }
+
+
+
+  get Adminmessage(): FormControl {
+    return this.superAdminForm.get('smessage') as FormControl;
   }
 
   postSuperAdminDetails() {
@@ -73,7 +116,7 @@ export class EditsuperMsgComponent implements OnInit {
       // a_name: this.superAdminForm.value.supername,
       a_id: this.superAdminForm.value.id,
       a_message: this.superAdminForm.value.smessage,
-      // saimage: this.superAdminimageData,
+      // saimage: this.adminImageData,
     }
 
     let postData = { ...superAdminData };
@@ -92,9 +135,9 @@ export class EditsuperMsgComponent implements OnInit {
     this.service.SuperAdminPost(formData).subscribe((res) => {
       console.log(res)
       if (res === 'success') {
-        alert('Successfully added');
+        this.toastr.success('Successfully added', 'Success');
       } else {
-        alert('Something went wrong.');
+        this.toastr.error('Something went wrong.', 'Error');
       }
     });
 
@@ -110,9 +153,9 @@ export class EditsuperMsgComponent implements OnInit {
     this.service.deleteSuperAdminById(this.superAdminId).subscribe(
       () => {
         // console.log('Product deleted successfully');
-        alert('deleted successfully!');
+        this.toastr.success('deleted successfully!', 'Success');
         // Redirect the user to a different page after successful deletion
-        this.router.navigate(['/user']);
+        this.router.navigate(['/admin']);
       },
       error => {
         console.error('Error deleting:', error);
@@ -121,19 +164,55 @@ export class EditsuperMsgComponent implements OnInit {
   }
 
   updateSuperAdmin() {
-    this.ElectionAdmin_model.a_name = this.superAdminForm.value.supername;
-    this.ElectionAdmin_model.a_message = this.superAdminForm.value.smessage;
-    // this.ElectionAdmin_model.saimage = this.superAdminForm.value.superAdminImage;
+    const adminToUpdate = {
+      a_id: this.superAdminForm.value.id,
+      a_message: this.superAdminForm.value.smessage,
+      ...(this.adminImageData ? { a_image: this.adminImageData } : {})
+    };
+
+    const { a_id, a_message } = adminToUpdate;
+
+    if (!a_id || !a_message) {
+      this.toastr.error('Please fill all the fields.', 'Error');
+      return;
+    }
+
+    if (a_message.length > 150) {
+      this.toastr.error('Message cannot be more than 150 characters.', 'Error');
+      return;
+    }
+
+    // Dynamic URL to append
+    const dynamicURL = `https://election.beatsacademy.in/#/webpage/${a_id}`;
+
+    // Check if the URL is already present in the message
+    if (!a_message.includes(dynamicURL)) {
+      adminToUpdate.a_message = `${a_message.trim()}\n${dynamicURL}`;
+    }
 
 
-    this.service.updateAdmminById(this.superAdminId, this.ElectionAdmin_model).subscribe(res => {
-      console.log(res)
-      alert('Updated successfully!');
-      // alert('updated')
-      this.superAdminForm.reset();
-      this.router.navigate(['/user'])
-    })
+    console.log('Before submitting the data is', adminToUpdate);
 
+    const formData: FormData = new FormData();
+    for (const [key, value] of Object.entries(adminToUpdate)) {
+      console.log(key, value);
+      formData.append(key, value);
+    }
+
+    console.log('the data is', formData);
+
+    this.service.updateAdmminById(this.superAdminId, formData).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.toastr.success('Updated successfully!', 'Success');
+        this.superAdminForm.reset();
+        this.router.navigate(['/admin']);
+      },
+      error: (err) => {
+        console.log(err);
+        this.toastr.error('Update failed!', 'Error');
+      }
+    });
   }
 
   get SuperAdminmessage(): FormControl {

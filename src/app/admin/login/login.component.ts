@@ -60,8 +60,8 @@ export class LoginComponent {
         if (result.message === 'Valid User' && result.admin_type === 'Superadmin') {
           const adminId = result.admin_ID;
           // const status = result.status;
-          this.router.navigate(['/user']);
-          this.toastr.success('Login successful as a user!', 'Success');
+          this.router.navigate(['/admin']);
+          this.toastr.success('Login successful as a Superadmin!', 'Success');
           const admin_type: string = 'Superadmin';
           this.authService.login(admin_type, adminId);
 
@@ -69,7 +69,7 @@ export class LoginComponent {
           const adminId = result.admin_ID;
           // const status = result.status;
           this.router.navigate(['/dashboard']);
-          this.toastr.success('Login successful as an artist!', 'Success');
+          this.toastr.success('Login successful as an Admin!', 'Success');
           const admin_type: string = 'Admin';
           this.authService.login(admin_type, adminId);
 

@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   isLoggedIn: BehaviorSubject<boolean>;
@@ -12,7 +11,9 @@ export class AuthService {
   constructor() {
     // Initialize isLoggedIn BehaviorSubject based on the value stored in localStorage
     const storedLoggedInStatus = localStorage.getItem('isLoggedIn');
-    const initialLoggedInStatus = storedLoggedInStatus ? JSON.parse(storedLoggedInStatus) : false;
+    const initialLoggedInStatus = storedLoggedInStatus
+      ? JSON.parse(storedLoggedInStatus)
+      : false;
     this.isLoggedIn = new BehaviorSubject<boolean>(initialLoggedInStatus);
   }
 
@@ -44,5 +45,4 @@ export class AuthService {
     this.isLoggedIn.next(false);
     // history.pushState(null, '', '/');
   }
-
 }
