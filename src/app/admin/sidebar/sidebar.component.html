@@ -1,11 +1,6 @@
 <div class="navbar">
   <div class="user mx-auto">
-    <img
-      src="../../../assets/Images/E-prachar2.png"
-      alt="E-प्रचार"
-      height="150px"
-      width="150px"
-    />
+    <img src="../../../assets/Images/E-prachar2.png" alt="E-प्रचार" height="150px" width="150px" />
 
     <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
   </div>
@@ -19,13 +14,8 @@
                 <span>Home</span>
             </button> -->
 
-      <button
-        *ngIf="isLoggedIn && isAdmin"
-        mat-button
-        class="menu-button"
-        [routerLinkActive]="['active']"
-        [routerLink]="['/user']"
-      >
+      <button *ngIf="isLoggedIn && isAdmin" mat-button class="menu-button" [routerLinkActive]="['active']"
+        [routerLink]="['/user']">
         <mat-icon>people</mat-icon>
         <span>Admins</span>
       </button>
