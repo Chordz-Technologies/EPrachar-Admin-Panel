@@ -8,84 +8,43 @@
           </h2>
           <form [formGroup]="AdminForm">
             <div class="mb-3 row">
-              <label for="id" class="col-sm-12 col-md-3 col-form-label"
-                >ID</label
-              >
+              <label for="id" class="col-sm-12 col-md-3 col-form-label">ID</label>
               <div class="col-sm-12 col-md-9">
-                <input
-                  type="text"
-                  id="id"
-                  class="form-control"
-                  formControlName="id"
-                  placeholder="User Name"
-                />
+                <input type="text" id="id" class="form-control" formControlName="id" placeholder="User Name" />
               </div>
             </div>
             <div class="mb-3 row">
-              <label for="contactno" class="col-sm-12 col-md-3 col-form-label"
-                >Message</label
-              >
+              <label for="contactno" class="col-sm-12 col-md-3 col-form-label">Message</label>
               <div class="col-sm-12 col-md-9">
-                <textarea
-                  type="text"
-                  class="form-control"
-                  formControlName="smessage"
-                  placeholder="Description"
-                  rows="3"
-                ></textarea>
-                <div
-                  class="form-text text-danger"
-                  *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)"
-                >
+                <textarea type="text" class="form-control" formControlName="smessage" placeholder="Description"
+                  rows="3"></textarea>
+                <div class="form-text text-danger"
+                  *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)">
                   Message is required.
                 </div>
-                <div
-                  class="form-text text-danger"
-                  *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)"
-                >
+                <div class="form-text text-danger"
+                  *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)">
                   Message length is too large. Please enter under 150
                   characters.
                 </div>
               </div>
             </div>
             <div class="mb-3 row">
-              <label
-                for="pracharImage"
-                class="col-sm-12 col-md-3 col-form-label"
-                >Election Image</label
-              >
+              <label for="pracharImage" class="col-sm-12 col-md-3 col-form-label">Election Image</label>
               <div class="col-sm-12 col-md-9">
-                <input
-                  type="file"
-                  id="pracharImage"
-                  class="form-control"
-                  (change)="onImageSelected($event)"
-                  accept="image/*"
-                />
+                <input type="file" id="pracharImage" class="form-control" (change)="onImageSelected($event)"
+                  accept="image/*" />
               </div>
             </div>
             <div class="text-center mt-4">
-              <button
-                type="submit"
-                class="btn btn-primary me-2 mb-2"
-                *ngIf="showupdate"
-                (click)="updateAdmin()"
-              >
+              <button type="submit" class="btn btn-primary me-2 mb-2" *ngIf="showupdate" (click)="updateAdmin()">
                 Update
               </button>
-              <button
-                type="submit"
-                class="btn btn-primary me-2 mb-2"
-                *ngIf="showsubmit"
-                (click)="postSuperAdminDetails()"
-              >
+              <button type="submit" class="btn btn-primary me-2 mb-2" *ngIf="showsubmit"
+                (click)="postSuperAdminDetails()">
                 Submit
               </button>
-              <button
-                type="button"
-                class="btn btn-danger mb-2"
-                routerLink="/dashboard"
-              >
+              <button type="button" class="btn btn-danger mb-2" routerLink="/dashboard">
                 Close
               </button>
             </div>

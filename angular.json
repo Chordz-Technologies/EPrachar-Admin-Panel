@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Ekari100Ton": {
+    "EPrachar-Admin-Panel": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Ekari100Ton:build:production"
+              "browserTarget": "EPrachar-Admin-Panel:build:production"
             },
             "development": {
-              "browserTarget": "Ekari100Ton:build:development"
+              "browserTarget": "EPrachar-Admin-Panel:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Ekari100Ton:build"
+            "browserTarget": "EPrachar-Admin-Panel:build"
           }
         },
         "test": {

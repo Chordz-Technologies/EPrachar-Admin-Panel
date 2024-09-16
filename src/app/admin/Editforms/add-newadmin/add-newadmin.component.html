@@ -13,154 +13,88 @@
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="adminUsername" class="form-label">Admin Name</label>
-            <input
-              type="text"
-              id="adminUsername"
-              class="form-control"
-              formControlName="adminUsername"
-              placeholder="Admin Name that used for 'Login'"
-            />
+            <input type="text" id="adminUsername" class="form-control" formControlName="adminUsername"
+              placeholder="Admin Name that used for 'Login'" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="adminname" class="form-label">Full Name</label>
-            <input
-              type="text"
-              id="adminname"
-              class="form-control"
-              formControlName="adminname"
-              placeholder="Full Name"
-            />
+            <input type="text" id="adminname" class="form-control" formControlName="adminname"
+              placeholder="Full Name" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="contactno" class="form-label">Contact No.</label>
-            <input
-              type="tel"
-              id="contactno"
-              maxlength="10"
-              class="form-control"
-              formControlName="contactno"
-              placeholder="Contact No."
-            />
-            <div
-              class="form-text text-danger fw-bold"
-              *ngIf="ContactNo.errors?.['required'] && (ContactNo.dirty || ContactNo.touched)"
-            >
+            <input type="tel" id="contactno" maxlength="10" class="form-control" formControlName="contactno"
+              placeholder="Contact No." />
+            <div class="form-text text-danger fw-bold"
+              *ngIf="ContactNo.errors?.['required'] && (ContactNo.dirty || ContactNo.touched)">
               Whatsapp Number is required.
             </div>
-            <div
-              class="form-text text-danger fw-bold"
-              *ngIf="ContactNo.errors?.['pattern'] && (ContactNo.dirty || ContactNo.touched)"
-            >
+            <div class="form-text text-danger fw-bold"
+              *ngIf="ContactNo.errors?.['pattern'] && (ContactNo.dirty || ContactNo.touched)">
               Whatsapp Number is invalid.
             </div>
-            <div
-              class="form-text text-danger fw-bold"
-              *ngIf="ContactNo.errors?.['minlength'] && (ContactNo.dirty || ContactNo.touched)"
-            >
+            <div class="form-text text-danger fw-bold"
+              *ngIf="ContactNo.errors?.['minlength'] && (ContactNo.dirty || ContactNo.touched)">
               Whatsapp Number is too short.
             </div>
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="passWord" class="form-label">Enter PassWord</label>
-            <input
-              type="password"
-              id="passWord"
-              class="form-control"
-              formControlName="passWord"
-              placeholder="Enter PassWord"
-            />
+            <input type="password" id="passWord" class="form-control" formControlName="passWord"
+              placeholder="Enter PassWord" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="conPassword" class="form-label">Confirm Password</label>
-            <input
-              type="password"
-              id="conPassword"
-              class="form-control"
-              formControlName="conPassword"
-              placeholder="Confirm Password"
-            />
+            <input type="password" id="conPassword" class="form-control" formControlName="conPassword"
+              placeholder="Confirm Password" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
             <label for="smessage" class="form-label">Message</label>
-            <textarea
-              type="text"
-              class="form-control"
-              formControlName="smessage"
-              placeholder="Enter your standard message and add at the end of message a WEB LINK OR URL"
-            ></textarea>
-            <div
-              class="form-text text-danger fw-bold"
-              *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)"
-            >
+            <textarea type="text" class="form-control" formControlName="smessage"
+              placeholder="Enter your standard message and add at the end of message a WEB LINK OR URL"></textarea>
+            <div class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)">
               Message is required.
             </div>
-            <div
-              class="form-text text-danger fw-bold"
-              *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)"
-            >
+            <div class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)">
               Message length is too large. Please enter under 150 characters.
             </div>
           </div>
           <div class="col-md-6">
             <label for="pracharImage" class="form-label">Prachar Image</label>
 
-            <input
-              type="file"
-              id="pracharImage"
-              class="form-control"
-              (change)="onImageSelected($event)"
-              accept="image/*"
-            />
+            <input type="file" id="pracharImage" class="form-control" (change)="onImageSelected($event)"
+              accept="image/*" />
           </div>
 
           <div class="col-md-6 pt-3">
             <!-- Adjusted column width for medium and larger screens -->
             <label class="form-label">Select Profile:</label>
             <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                id="option1"
-                name="options"
-                formControlName="options"
-                value="1"
-              />
+              <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
+                value="1" />
               <label class="form-check-label" for="option1">Admin</label>
             </div>
           </div>
           <div class="col-12">
             <!-- Full width button for all screen sizes -->
             <div class="text-center my-3">
-              <button
-                type="submit"
-                class="btn btn-primary me-3"
-                *ngIf="showupdate"
-                (click)="updateproduct()"
-              >
+              <button type="submit" class="btn btn-primary me-3" *ngIf="showupdate" (click)="updateproduct()">
                 Update
               </button>
-              <button
-                type="submit"
-                class="btn btn-primary me-3"
-                *ngIf="showsubmit"
-                (click)="postSuperAdminDetails()"
-              >
+              <button type="submit" class="btn btn-primary me-3" *ngIf="showsubmit" (click)="postSuperAdminDetails()">
                 Submit
               </button>
               <button type="button" class="btn btn-danger" routerLink="/admin">
                 Close
               </button>
-              <button
-                type="button"
-                class="btn btn-danger me-3"
-                *ngIf="showdelete"
-                (click)="deleteProduct()"
-              >
+              <button type="button" class="btn btn-danger me-3" *ngIf="showdelete" (click)="deleteProduct()">
                 Delete
               </button>
             </div>
